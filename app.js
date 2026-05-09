@@ -16,14 +16,15 @@ app.use(express.json());
 // Connect to MongoDB database
 connectDB();
 
+app.get("/", (req, res) => {
+  res.json({ message: "API Working" });
+});
+
 // Routes
 app.use('/api/todos', todoRoutes);
 
 // Error Handling Middleware
 app.use(errorHandler);
 
-app.get("/", (req, res) => {
-  res.json({ message: "API Working" });
-});
 
 export default app;
