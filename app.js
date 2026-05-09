@@ -22,4 +22,8 @@ app.use('/api/todos', todoRoutes);
 // Error Handling Middleware
 app.use(errorHandler);
 
+app.get("/", (req, res) => {
+  res.json({ message: "API Working" });
+});
+
 export default app;
